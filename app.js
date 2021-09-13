@@ -1,5 +1,5 @@
 const inquirer = require('inquirer');
-// console.log(inquirer);
+const { writeReadMe } = require('./utils/generate-file.js');
 
 const promptUser = () => {
     return inquirer.prompt([
@@ -90,4 +90,7 @@ const promptUser = () => {
     ])
 }
 
-promptUser();
+promptUser()
+    .then(userData => {
+        return generateReadMe(userData);
+    })
