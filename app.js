@@ -1,7 +1,9 @@
 const inquirer = require('inquirer');
+const generatePage = require('./src/page-template.js');
 const { writeReadMe } = require('./utils/generate-file.js');
 
 const promptUser = () => {
+    //inquirer used to create questions and get user input
     return inquirer.prompt([
         {
             type: 'input',
@@ -82,15 +84,53 @@ const promptUser = () => {
                 }
             }
         }, 
+        // {
+        //     type: 'list', 
+        //     name: 'license', 
+        //     choices: ['hi', 'hello']
+        // }
         {
-            type: 'list', 
-            name: 'license', 
-            choices: ['hi', 'hello']
+            type: 'input', 
+            name: 'github', 
+            message: 'Provide your GitHub username.(Required)',
+            validate: testingInput => {
+                if (testingInput) {
+                    return true;
+                } else {
+                    console.log('Please provide your GitHub username.');
+                    return false;
+                }
+            }
+        }, 
+        {
+            type: 'input', 
+            name: 'email', 
+            message: 'Provide your email. (Required)',
+            validate: testingInput => {
+                if (testingInput) {
+                    return true;
+                } else {
+                    console.log('Please provide your email for contact information.');
+                    return false;
+                }
+            }
         }
     ])
+    .then(readmeData => {
+        return readmeData;
+    })
 }
 
 promptUser()
-    .then(userData => {
-        return generateReadMe(userData);
+    .then(readmeData => {
+        return generatePage(readmeData);
+    })
+    .then(readmeFile => {
+        return writeReadMe(readmeFile);
+    })
+    .then(writeFileResponse => {
+        console.log(writeFileResponse);
+    }) 
+    .catch(err => {
+        console.log(err);
     })
