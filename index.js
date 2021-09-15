@@ -14,7 +14,7 @@ const promptUser = () => {
                     return true;
                 } else {
                     console.log('Please enter the title of your project.');
-                    return false;
+                    return false; 
                 }
             }
         },
