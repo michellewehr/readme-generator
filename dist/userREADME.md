@@ -1,4 +1,4 @@
-# michelle
+# Michelle
 
 ## *Table of Contents*
 
@@ -7,6 +7,7 @@
 * [Usage](#usage)
 * [Contribution](#contribution)
 * [Testing](#testing)
+* [License](#license)
 * [Contact](#contact)
 
 ## Description 
@@ -14,13 +15,14 @@ michelle
 ## Installation
 michelle
 ## Usage 
-dskfla
+michelle
 ## Contribution
-fdsjkfl
+michelle
 ## Testing 
-fdsjkfl
-
+michelle
+## License
+undefined
 # Contact:
-* GitHub: kdjslf
-* E-mail: <djskfla>
+* GitHub: fdsaf
+* E-mail: <fdsaf>
     

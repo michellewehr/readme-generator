@@ -2,14 +2,54 @@
 const inquirer = require('inquirer');
 const generatePage = require('./src/page-template.js');
 const { writeReadMe } = require('./utils/generate-file.js');
+const chalk = require('chalk');
 
 const promptUser = () => {
+
+    //make array of license with badges and links
+    const licenses = [
+        {
+            licenseName: 'None'
+        }, 
+        { 
+            licenseName: 'GNU AGPLv3',
+            licenseBadge: '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)',
+            licenseLink: 'https://www.gnu.org/licenses/gpl-3.0.en.html'
+        },
+        {
+            licenseName: 'Mozzilla Public License 2.0',
+            licenseBadge: '[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)',
+            licenseLink: 'https://www.mozilla.org/en-US/MPL/'
+        },
+        {
+            licenseName: 'Apache License 2.0',
+            licenseBadge: '[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)',
+            licenseLink: 'http://www.apache.org/licenses/LICENSE-2.0'
+        },
+        {
+            licenseName: 'MIT License',
+            licenseBadge: '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)',
+            licenseLink: 'https://github.com/git/git-scm.com/blob/main/MIT-LICENSE.txt'
+        },
+        {
+            licenseName: 'Boost Software License 1.0',
+            licenseBadge: '[![License](https://img.shields.io/badge/License-Boost%201.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)',
+            licenseLink: 'https://www.boost.org/LICENSE_1_0.txt'
+        },
+        {
+            licenseName: 'The Unlicense',
+            licenseBadge: '[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)',
+            licenseLink: 'https://unlicense.org/'
+        },
+        
+    ]
+
     //inquirer used to create questions and get user input
     return inquirer.prompt([
         {
             type: 'input',
             name: 'title',
-            message: 'What is the title of your project? (Required)', 
+            message: chalk.magenta.bold('What is the title of your project? (Required)'), 
             validate: titleInput => {
                 if (titleInput) {
                     return true;
@@ -36,7 +76,7 @@ const promptUser = () => {
             type: 'input', 
             name: 'installation', 
             message: 'Provide instructions for installation. (Required)',
-            validat: installationInput => {
+            validate: installationInput => {
                 if (installationInput) {
                     return true;
                 } else {
@@ -88,7 +128,7 @@ const promptUser = () => {
         {
             type: 'list', 
             name: 'license', 
-            choices: ['None', 'GNU AGPLv3', 'Mozzilla Public License 2.0', 'Apache License 2.0', 'MIT License', 'Boost Software License 1.0', 'The Unlicense'],
+            choices: licenses.licenseName,
             default: 'none'
         },
         {

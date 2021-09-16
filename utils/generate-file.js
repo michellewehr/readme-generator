@@ -14,7 +14,6 @@ const writeReadMe = userInput => {
         })
     })
 })
-
 }
 
 module.exports = { 
