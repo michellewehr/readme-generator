@@ -1,6 +1,9 @@
+
+
 const generatePage = (userInput) => {
+    const { title, description, installation, usage, contribution, testing, license, github, email } = userInput;
+
     // console.log(templateData)
-    const { title, description, installation, usage, contribution, testing, github, email } = userInput;
 
     return `# ${ title }
 
@@ -11,7 +14,7 @@ const generatePage = (userInput) => {
 * [Usage](#usage)
 * [Contribution](#contribution)
 * [Testing](#testing)
-* [Contact Information]
+* [Contact](#contact)
 
 ## Description 
 ${ description }
@@ -24,9 +27,9 @@ ${ contribution }
 ## Testing 
 ${ testing }
 
-# Contact Me:
+# Contact:
 * GitHub: ${ github }
-* E-mail: ${ email }
+* E-mail: <${ email }>
     `;
 }
 

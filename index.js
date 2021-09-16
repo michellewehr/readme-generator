@@ -1,3 +1,4 @@
+//Include packages needed for this application
 const inquirer = require('inquirer');
 const generatePage = require('./src/page-template.js');
 const { writeReadMe } = require('./utils/generate-file.js');
@@ -84,11 +85,12 @@ const promptUser = () => {
                 }
             }
         }, 
-        // {
-        //     type: 'list', 
-        //     name: 'license', 
-        //     choices: ['hi', 'hello']
-        // }
+        {
+            type: 'list', 
+            name: 'license', 
+            choices: ['None', 'GNU AGPLv3', 'Mozzilla Public License 2.0', 'Apache License 2.0', 'MIT License', 'Boost Software License 1.0', 'The Unlicense'],
+            default: 'none'
+        },
         {
             type: 'input', 
             name: 'github', 
@@ -116,8 +118,8 @@ const promptUser = () => {
             }
         }
     ])
-    .then(readmeData => {
-        return readmeData;
+    .then(data => {
+        return data;
     })
 }
 
