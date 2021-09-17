@@ -5,14 +5,17 @@ const { writeReadMe } = require('./utils/generate-file.js');
 const chalk = require('chalk');
 
 const promptUser = () => {
-
+    console.log(`
+    ================================
+    ================================
+    Begin creating your readme now:`);
   
     //inquirer used to create questions and get user input
     return inquirer.prompt([
         {
             type: 'input',
             name: 'title',
-            message: chalk.magenta.bold('What is the title of your project? (Required)'), 
+            message: 'What is the title of your project? (Required)', 
             validate: titleInput => {
                 if (titleInput) {
                     return true;
@@ -25,7 +28,7 @@ const promptUser = () => {
         {
             type: 'input',
             name: 'description',
-            message: 'Provide a description for your project. (Required)',
+            message:'Provide a description for your project. (Required)',
             validate: descriptionInput => {
                 if (descriptionInput) {
                     return true;
