@@ -1,4 +1,4 @@
-# s
+# e
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 ## *Table of Contents*
@@ -12,18 +12,23 @@
 * [Contact](#contact)
 
 ## Description 
-s
+e
 ## Installation
-s
+e
 ## Usage 
-s
+e
 ## Contribution
-s
+e
 ## Testing 
-s
+e
+
 ## License
-For more information about the Apache License 2.0 click here: 
+
+To learn more about licensing, click the link below:
+<http://www.apache.org/licenses/LICENSE-2.0>
+    
+
 # Contact:
-* GitHub: s
-* E-mail: <s>
+* GitHub: e
+* E-mail: <e>
     

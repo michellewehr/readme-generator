@@ -37,9 +37,16 @@ function renderLicenseLink(license) {
     }
 }
 
-// If there is no license, return an empty string
+// // If there is no license, return an empty string
 function renderLicenseSection(license) {
-    return 'For more information about the ' + license + ' click here: ' 
+    if (license === 'None') {
+        return 'There is no license for this project.';
+    } else {
+    return `
+To learn more about licensing, click the link below:
+<${renderLicenseLink(license)}>
+    `;
+    }
 }
 
 
@@ -70,8 +77,10 @@ ${ usage }
 ${ contribution }
 ## Testing 
 ${ testing }
+
 ## License
 ${renderLicenseSection(license)}
+
 # Contact:
 * GitHub: ${ github }
 * E-mail: <${ email }>

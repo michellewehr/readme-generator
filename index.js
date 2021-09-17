@@ -92,7 +92,7 @@ const promptUser = () => {
             type: 'list', 
             name: 'license', 
             choices:  ['None', 'GNU AGPLv3', 'Mozzilla Public License 2.0', 'Apache License 2.0','MIT License','Boost Software License 1.0','The Unlicense'],
-            default: 'none'
+            default: 'None'
         },
         {
             type: 'input', 
