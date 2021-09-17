@@ -63,7 +63,7 @@ const promptUser = () => {
         }, 
         {
             type: 'input', 
-            name: 'contribution',
+            name: 'contributing',
             message: 'Provide guidelines for contribution. (Required)',
             validate: contributionInput => {
                 if (contributionInput) {
@@ -77,7 +77,7 @@ const promptUser = () => {
         }, 
         {
             type: 'input', 
-            name: 'testing', 
+            name: 'tests', 
             message: 'Explain testing procedures. (Required)',
             validate: testingInput => {
                 if (testingInput) {

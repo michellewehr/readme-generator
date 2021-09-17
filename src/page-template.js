@@ -50,7 +50,7 @@ To learn more about licensing, click the link below:
 }
 
 module.exports = userInput => {
-    const { title, description, installation, usage, contribution, testing, license, github, email } = userInput;
+    const { title, description, installation, usage, contributing, tests, license, github, email } = userInput;
 
     return `# ${ title }
 ${renderLicenseBadge(license)}
@@ -60,10 +60,10 @@ ${renderLicenseBadge(license)}
 * [Description](#description)
 * [Installation](#installation)
 * [Usage](#usage)
-* [Contribution](#contribution)
-* [Testing](#testing)
+* [Contributing](#contributing)
+* [Tests](#tests)
 * [License](#license)
-* [Contact](#contact)
+* [Questions](#Questions)
 
 ## Description 
 ${ description }
@@ -71,16 +71,16 @@ ${ description }
 ${ installation }
 ## Usage 
 ${ usage }
-## Contribution
-${ contribution }
-## Testing 
-${ testing }
+## Contributing
+${ contributing }
+## Tests 
+${ tests }
 
 ## License
 ${renderLicenseSection(license)}
 
-# Contact:
-* GitHub: https://github.com/${github}
+# Questions:
+* [GitHub](https://github.com/${github})
 * E-mail: <${ email }>
     `;
 }
