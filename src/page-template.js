@@ -49,8 +49,6 @@ To learn more about licensing, click the link below:
     }
 }
 
-
-// const generatePage = (userInput) => {
 module.exports = userInput => {
     const { title, description, installation, usage, contribution, testing, license, github, email } = userInput;
 
@@ -82,9 +80,8 @@ ${ testing }
 ${renderLicenseSection(license)}
 
 # Contact:
-* GitHub: ${ github }
+* GitHub: https://github.com/${github}
 * E-mail: <${ email }>
     `;
 }
 
-// module.exports = generatePage;
