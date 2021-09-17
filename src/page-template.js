@@ -2,7 +2,7 @@ const renderLicenseBadge = (license) => {
         switch (license) {
             case 'None':
                 return '';
-            case 'GNU AGPv3': 
+            case 'GNU AGPLv3': 
                 return '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)';
             case 'Mozzilla Public License 2.0':
                 return'[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)';
@@ -22,7 +22,7 @@ function renderLicenseLink(license) {
     switch (license) {
         case 'None':
             return '';
-        case 'GNU AGPv3': 
+        case 'GNU AGPLv3': 
             return 'https://www.gnu.org/licenses/gpl-3.0.en.html';
         case 'Mozzilla Public License 2.0':
             return 'https://www.mozilla.org/en-US/MPL/';
@@ -37,13 +37,13 @@ function renderLicenseLink(license) {
     }
 }
 
-// // If there is no license, return an empty string
+// If there is no license, return an empty string
 function renderLicenseSection(license) {
     if (license === 'None') {
         return 'There is no license for this project.';
     } else {
     return `
-To learn more about licensing, click the link below:
+To learn more about this licensing, click the link below:
 <${renderLicenseLink(license)}>
     `;
     }
